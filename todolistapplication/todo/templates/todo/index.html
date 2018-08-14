@@ -55,9 +55,9 @@
 
 						{% for Todo in to_do_list  %}
 							{% if Todo.completed %}
-							<li class="list-group-item todo-completed">{{ Todo.text  }}</li>
+								<li class="list-group-item todo-completed">{{ Todo.text  }}</li>
 							{% else %}
-							<a href = #> <li class="list-group-item">    {{ Todo.text  }}</li></a>
+								<a href = #> <li class="list-group-item">    {{ Todo.text  }}</li></a>
 							{% endif %}
 						{%  endfor %}
 
