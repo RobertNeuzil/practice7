@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.views.decorators.http import require_POST
+
 
 from .models import Todo
 from .forms import Todoform
@@ -17,3 +19,8 @@ def index(request):
 
 	return render(request, "todo/index.html", context)
 
+@require_POST
+def addtodo(request):
+	form = Todoform(request.POST)
+	print (request.POST['text'])
+	return redirect('index')
